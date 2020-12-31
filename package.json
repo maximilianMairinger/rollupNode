@@ -1,0 +1,45 @@
+{
+  "name": "rollup-node",
+  "version": "0.0.1",
+  "description": "Similar to ts-node just with rollup.",
+  "main": "app/dist/rollupNode.js",
+  "types": "app/dist/rollupNode.d.ts",
+  "scripts": {
+    "build": "tsc -p ./tsconfig.prod.json",
+    "dev": "npm run devNode",
+    "devWeb": "rollup --config rollup.web.dev.config.js -w",
+    "devNode": "rollup --config rollup.node.dev.config.js -w",
+    "deploy": "npm run build && npm publish",
+    "repl": "node ./repl/dist/rollupNode-repl.js",
+    "start": "npm run repl",
+    "buildTest": "rollup --config rollup.node.test.config.js",
+    "test": "npm run buildTest && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximilianMairinger/rollupNode.git"
+  },
+  "keywords": [
+  "rollup",
+  "node"
+],
+  "author": "Maximilian Mairinger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximilianMairinger/rollupNode/issues"
+  },
+  "homepage": "https://github.com/maximilianMairinger/rollupNode#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^8.1.0",
+    "@rollup/plugin-typescript": "^5.0.0",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^13.13.4",
+    "jest": "^26.6.3",
+    "rollup": "^2.18.1",
+    "tslib": "2.0.0",
+    "typescript": "^4.0.2",
+    "webpack-merge": "^5.0.9"
+  }
+}
